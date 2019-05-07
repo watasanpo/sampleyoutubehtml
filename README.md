@@ -60,9 +60,9 @@ frameborder="0" allowfullscreen>
 
 `https://www.youtube.com/embed/M7lc1UVf-VE`の`M7lc1UVf-VE` が表示したい動画で変わります。
 
-`Google Chrome` の バージョン: 73.0.3683.103では、バージョンでは、自動再生されません。
+## `Google Chrome`自動再生されない
 
-よって対応します。
+`Google Chrome` の バージョン: 73.0.3683.103では、バージョンでは、自動再生されないので対応します。
 
 `src="https://www.youtube.com/embed/M7lc1UVf-VE?`に`mute=1&` を追記します。
 
@@ -74,25 +74,25 @@ frameborder="0" allowfullscreen>
 
 にします。
 
-w3c バリデート対応
+## w3c バリデート対応
 
 [https://validator.w3.org/#validate_by_input](https://validator.w3.org/#validate_by_input)
 
 htmlを貼り付けて検査
 
-The frameborder attribute on the iframe element is obsolete. Use CSS instead.
+- The frameborder attribute on the iframe element is obsolete. Use CSS instead.
 
 frameborder属性は古い記述方法です。代わりにcssを使用します。
 
 frameborderを消します。
 
-Attribute type not allowed on element iframe at this point.
+- Attribute type not allowed on element iframe at this point.
 
  type="text/html" 属性はiframeでは使用できません。
 
 なので削除します。
 
-続いてレスポンシブ対応します。
+## 続いてレスポンシブ対応
 
 iframeタグをdivタグを挟みます。
 
@@ -125,22 +125,34 @@ cssは、
 
 ```
 
-.親要素youtubをewidthを100%にすることで、ブラウザー横幅に応じて
-変化できるようにします。
+### 解説
 
-padding で52.65%にする理由
+親要素 `youtube`をwidthを100%にすることで、ブラウザー横幅に応じて変化できるようにします。
+
+- padding で52.65%にする理由
 
 youtubeの埋め込み動画の縦横比[アスペクト比](https://developers.google.com/youtube/youtube_player_demo?hl=ja)は16:9を基準に、横幅100%とした時の高さは、`9 / 16 * 100 =52.65%`になります。
 
-子要素iframeで`position: absolute; top: 0; left: 0;`とする理由
+- 子要素iframeで`position: absolute; top: 0; left: 0;`とする理由
 
-`position: absolute; top: 0; left: 0;`とすることで親要素youtuveに重ねることができます。
-
-
+`position: absolute; top: 0; left: 0;`とすることで親要素youtubeに重ねることができます。
 
 
-でブラウザーで確認して終わりです。終わりです。
+でブラウザーで確認して終わりです。
 
+## まとめ
 
+公式サイトをみるのがベスト　
+[https://developers.google.com/youtube/iframe_api_reference?hl=ja](https://developers.google.com/youtube/iframe_api_reference?hl=ja)
+
+### 課題
+
+動画のヘッダー部分とフッダー部分にある、動画タイトル　後でみる　共有 Youtubelogoを消す方法を知りたい。
+
+対応として考えられるのは、cssで対応。coverのtopをずらして画面から非表示
+
+Youtubeさんが対応
+
+もしこちらの投稿を見ていただいた方でわかる方がいたら教えて頂けると助かります。
 
 
